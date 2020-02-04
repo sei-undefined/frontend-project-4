@@ -27,7 +27,7 @@ const Header = ({ user }) => (
   <header className="main-header">
   
     <nav className="header-btns-container">
-    <div className="img-div"><img className ="header-img" src="https://mail.google.com/mail/u/0?ui=2&ik=8a410340a8&attid=0.1.1&permmsgid=msg-f:1657618889263371888&th=17010b98eb855670&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ9LbBHFT2ySFqo6kDMllNtGhCJD-BHsFY4mNF-6WbIy3t3ahJaDPwVGtgaMj7mecS0rB_N-NGob1NtWFJul1OwiDX9Ku6IMm_Rut0p2s8r-XqN8BmAp-cz0CAw&disp=emb" width="21%" height="183px" /></div>
+    <div className="img-div"><img className ="header-img" src="https://mail.google.com/mail/u/0?ui=2&ik=8a410340a8&attid=0.1.1&permmsgid=msg-f:1657618889263371888&th=17010b98eb855670&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ9LbBHFT2ySFqo6kDMllNtGhCJD-BHsFY4mNF-6WbIy3t3ahJaDPwVGtgaMj7mecS0rB_N-NGob1NtWFJul1OwiDX9Ku6IMm_Rut0p2s8r-XqN8BmAp-cz0CAw&disp=emb" width="58%" height="570px" /></div>
     {/* <div className="img-div"><img className ="header-img" src="../data/imgs/Jasad.JPG" width="17%" height="133px" /></div> */}
 
       { user && <span className="welcome" >Welcome, {user.email}</span>}

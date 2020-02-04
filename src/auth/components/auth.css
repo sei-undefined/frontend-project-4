@@ -5,7 +5,8 @@
     padding:1%;
     height:534px;
     width:72%;
-    background-color: rgba(209, 207, 201, 0.9);
-    border:solid 3px grey;
+    background-color: rgba(209, 207, 201, 0.4);
+    border:solid 3px rgb(240, 226, 226);
     border-radius: 15%;
+    /* color: #adaba3; */
 }

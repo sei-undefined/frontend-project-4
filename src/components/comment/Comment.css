@@ -10,15 +10,31 @@
 .count-div{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 7%;
+    margin-bottom: 4%;
+    margin-top: -6%;
 
 }
 .comnts{
     /* margin-top: 12%; */
     /* border: black solid 5px; */
-    margin:6%;
+    margin:5%;
+    margin-top: 0%;
     /* border-bottom:grey solid 1px; */
 }
 /* .coments-component{
     border-bottom:grey solid 1px;
 } */
+
+.count{
+    border: #d6d2d2 solid 1px;
+    /* height: 100px; */
+    /* width: 16%; */
+    padding:3%;
+    border-radius: 9%;
+    text-align: center;
+}
+
+.count:hover{
+    background-color: rgba(191, 187, 187, 0.7);
+    border: 4px solid #d6d2d2;
+}

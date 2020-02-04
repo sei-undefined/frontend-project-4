@@ -36,9 +36,16 @@
 }
 p.conf-by{
     margin-top:10%;
-    margin-left: 40%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 30%;
+    font-family: 'Courgette', cursive;
+    color:#adaba3;
+    /* font-family:'Noto Sans KR', sans-serif;  */
+    font-size: 3em;  
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
 }
+/* .conf-by{
+
+} */
 .cmnt{
      /* margin-top:27%; */
     /* margin-left:40%;  */
