@@ -10,6 +10,7 @@ export const getLoc = dispatch => {
     
 }
 
+
 // export const getLoc = () => async dispatch => {
 //     try{
 //         let loc = await navigator.geolocation.getCurrentPosition()
