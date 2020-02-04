@@ -1,11 +1,18 @@
-import {ADD_PIN , DELETE_PIN} from './actionTypes';
+import {ADD_PIN , DELETE_PIN, INDEX_PIN} from './actionTypes';
+import axios from 'axios'
+import apiUrl from '../../apiConfig'
 
 const initialState = {
     pins: []
 }
 
+
 const reducer = (state=initialState, action)=>{
-    switch (action.type) {
+    switch (action.type) { 
+        case INDEX_PIN:
+            return{
+                pins: action.pins
+            }
         case ADD_PIN:
             return{
                 pins: state.pins.concat(action.pin)

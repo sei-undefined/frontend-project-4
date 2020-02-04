@@ -8,11 +8,11 @@ import positions from '../../data/positions'
 import {Link, withRouter} from 'react-router-dom'
 
 // import api
-import {index} from './api'
+import {indexall} from './api'
 
 // import redux
 import {connect} from 'react-redux'
-import {addPin} from '../../store/pin/actions'
+import {addPin,getPins} from '../../store/pin/actions'
 import {myLoc,getLoc} from '../../store/map/actions'
 
 
@@ -21,10 +21,10 @@ import {myLoc,getLoc} from '../../store/map/actions'
 
 
 class MapComp extends Component {
-    state={
-      pins:[]
+    // state={
+    //   pins:[]
 
-    }
+    // }
 
     toLocation = () => {
       // <Link to={`/Locations/:id`}></Link>
@@ -33,15 +33,18 @@ class MapComp extends Component {
 
 
     componentDidMount(){
-      const user = this.props.user
-        index(user)
-        .then(response => {
-            const allPins = response.data.pins;
-            this.setState({
-                pins:allPins
-            })
-        })
-        .catch((error) => console.log(error))
+      this.props.getPins()
+      console.log(this.props.pins)
+    //   console.log(this.state.center)
+    //   const user = this.props.user
+    //     indexall(user)
+    //     .then(response => {
+    //         const allPins = response.data.pins;
+    //         this.setState({
+    //             pins:allPins
+    //         })
+    //     })
+    //     .catch((error) => console.log(error))
     }
     locationHandle = () => {
       navigator.geolocation.getCurrentPosition((location)=>{
@@ -53,7 +56,7 @@ class MapComp extends Component {
       this.props.history.push(`/locations/${id}`)
     }
     render (){
-      const pins = this.state.pins
+      // const pins = this.state.pins
 
 
         return ( 
@@ -71,13 +74,15 @@ class MapComp extends Component {
                 <Popup>Nora is here</Popup>
               </Marker> */}
 
-              {pins.map(pin=>(
+              {this.props.pins.map(pin=>(
                 <Marker onClick={()=>this.handleClick(pin._id)} key={pin._id} position={pin.location.coordinates}>
-                  {/* <Popup>{position.popup}</Popup> */}
+                  {/* <Popup>{position.popup}</Popup> */ }
                 </Marker>
               ))}
+              
             </Map> 
-            <button onClick={this.props.getLoc}>test redux</button> 
+            <button onClick={this.props.getPins}>test redux getPins</button> 
+            <button onClick={this.props.getLoc}>test redux getLoc</button> 
             </Fragment>
             
 
@@ -87,7 +92,7 @@ class MapComp extends Component {
     }
 }
 const mapStateToProps = state => ({
-  // pins: state.pin.pins,
+  pins: state.pin.pins,
   zoom: state.map.zoom,
   center: state.map.center,
   pins: state.pin.pins
@@ -95,7 +100,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps =  dispatch => ({
   addPin: id => dispatch(addPin(id)),
-  getLoc: () => dispatch(getLoc)
+  getLoc: () => dispatch(getLoc),
+  getPins: () => dispatch(getPins)
 
 })
 
