@@ -5,11 +5,19 @@ $charcoal: #ccc;
 
 body{
   background-color: #bdbbae;
-  background-image: url("https://images.pexels.com/photos/874684/pexels-photo-874684.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  // background-image: url("https://images.pexels.com/photos/874684/pexels-photo-874684.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  // background-image: url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+  // background-image: url("https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-image: url("https://cdn.wallpaperdirect.com/asset/img/product/156363/tiled/caselio-linen-clear-beige-wallpaper-tiled-156363.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  // margin-top: 13%;
+  // border-radius: 5%;
+  background-position: center center;
   font-family: 'Ubuntu', sans-serif;
-  color: black;
+  // color: black;
+  // color: #adaba3;
+
 }
 .leaflet-container {
   width: 100%;
@@ -17,7 +25,9 @@ body{
 }
 
 a {
-  color: black;
+  // color: black;
+  color: #adaba3;
+
 
 }
 

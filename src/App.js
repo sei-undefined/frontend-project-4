@@ -85,7 +85,7 @@ class App extends Component {
 
         <div> {/*Routes*/}
 
-            <Route user={user} path='/' render={() => { 
+            <AuthenticatedRoute user={user} path='/' render={() => { 
               return (
                 <div>
                   {/* <Header/> */}
