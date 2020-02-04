@@ -1,0 +1,17 @@
+/* .map-div{
+    margin-top: 2%;
+    background-color: blanchedalmond;
+    padding:10%
+} */
+
+.leaflet-container {
+    width: 65%;
+    height: 70vh;
+    margin: 7% auto;
+  }
+
+.map{
+    /* border: solid 4px black; */
+    border: rgba(222, 218, 224, 0.4) solid;
+    border-radius: 17%;
+}
