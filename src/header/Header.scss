@@ -1,6 +1,6 @@
 .header{
 
-//   /* background-image: url("../../images/Queue.jpeg"); */
+  // background-image: url("https://images.unsplash.com/photo-1547499417-61a435d27cb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"); 
 //   /* background-size: ;
 //   background-repeat:no-repeat; */
      display: block; 
@@ -18,10 +18,14 @@
 
 .header-img {
   // margin-top:0%;
-  margin-right: 80%;
-  border-radius:15%;
+  // margin-right: 80%;
+  margin-left:-16%;
+  border-radius:45%;
+  display: block;
 }
-
+.img-div{
+  margin-left: -4%;
+}
 // .header-btns-container{
 //   margin-top:-5%;
 //   margin-right: -4%;
@@ -64,6 +68,7 @@ $charcoal: #bbb;
   padding: 6%;
   border-bottom:3px solid black;
   background-color: #6e6c64;
+  background-image: url("https://images.pexels.com/photos/220182/pexels-photo-220182.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
 
   a,
   span {
@@ -106,3 +111,11 @@ $charcoal: #bbb;
     }
   }
 }
+
+.main-header a, .main-header span{
+  min-width: 70px;
+  // margin-right:0%;
+}
+// .welcome{
+//   margin-right:12%;
+// }

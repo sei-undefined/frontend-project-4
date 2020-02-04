@@ -3,11 +3,16 @@ import React, {Component} from 'react'
 import locationData from '../../data/locationData'
 import './pin.css'
 const orgPins = (
-    <h3>There is org pin</h3>
+    // <h3>There is org pin</h3>
+    <div>
+    <p className="conf-by"> Confirmed by</p> 
+    <img className="org-img" src="https://pbs.twimg.com/profile_images/881809373995171844/h3lJRsq_.jpg" width="35%" height="35%"/>  
+    </div>
 
 )  
 
 const noOrgPins = (
+    //hide this div
     <div>No org Pin</div>
 ) 
 
@@ -15,7 +20,6 @@ const OrgPinsContainer = () => (
     <div className='org-pins-container'> 
         {/* { Pin.orgConfirm == true} */}
         { locationData.orgConfirm ? orgPins : noOrgPins }
-        <p> approved by <img className="org-img" src="https://pbs.twimg.com/profile_images/881809373995171844/h3lJRsq_.jpg" width="35%" height="35%"/>  </p>
     </div>
 )
 

@@ -1,0 +1,11 @@
+.form-container{
+    margin-top:15%;
+    margin-bottom: 45%;
+    margin-left:15%;
+    padding:1%;
+    height:534px;
+    width:72%;
+    background-color: rgba(209, 207, 201, 0.9);
+    border:solid 3px grey;
+    border-radius: 15%;
+}

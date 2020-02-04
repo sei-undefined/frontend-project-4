@@ -29,7 +29,7 @@ class App extends Component {
       redirect: null,
       user: null,
       alerts: [],
-      hello: 0
+      hello: ""
     }
   }
 
