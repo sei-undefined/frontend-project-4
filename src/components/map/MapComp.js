@@ -104,7 +104,6 @@ const mapStateToProps = state => ({
   pins: state.pin.pins,
   zoom: state.map.zoom,
   center: state.map.center,
-  pins: state.pin.pins
 })
 
 const mapDispatchToProps =  dispatch => ({
