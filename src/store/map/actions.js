@@ -5,9 +5,13 @@ export const myLoc = (loc) => ({
     center:loc
 })
 
-export const getLoc = dispatch => {
-    navigator.geolocation.getCurrentPosition(location=>dispatch(myLoc([location.coords.latitude,location.coords.longitude])))
+// export const getLoc = dispatch => {
+//     navigator.geolocation.getCurrentPosition(location=>dispatch(myLoc([location.coords.latitude,location.coords.longitude])))
     
+// }
+
+export const setLoc = (loc)=> dispatch => {
+    dispatch(myLoc(loc))
 }
 
 // export const getLoc = () => async dispatch => {

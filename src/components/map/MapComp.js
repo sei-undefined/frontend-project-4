@@ -13,7 +13,7 @@ import {indexall} from './api'
 // import redux
 import {connect} from 'react-redux'
 import {addPin,getPins} from '../../store/pin/actions'
-import {myLoc,getLoc} from '../../store/map/actions'
+import {myLoc,getLoc,setLoc} from '../../store/map/actions'
 
 
  
@@ -65,7 +65,13 @@ class MapComp extends Component {
       this.props.history.push(`/locations/${id}`)
     }
     render (){
-      // const pins = this.state.pins
+      const pins = this.props.pins
+      console.log(pins)
+      navigator.geolocation.getCurrentPosition(location => {
+        return let loc = [location.coords.longitude,location.coords.latitude]
+
+      })
+      // loc = [loc.coords.latitude, loc.coords.longitude]
 
 
         return ( 
@@ -91,7 +97,9 @@ class MapComp extends Component {
               
             </Map> 
             <button onClick={this.props.getPins}>test redux getPins</button> 
-            <button onClick={this.props.getLoc}>test redux getLoc</button> 
+            {/* <button onClick={this.props.getLoc}>test redux getLoc</button>  */}
+            <button onClick={()=>this.props.setLoc(loc)}>test redux setLoc</button> 
+
             </Fragment>
             
 
@@ -108,8 +116,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps =  dispatch => ({
   addPin: id => dispatch(addPin(id)),
-  getLoc: () => dispatch(getLoc),
-  getPins: () => dispatch(getPins)
+  // getLoc: () => dispatch(getLoc),
+  getPins: () => dispatch(getPins),
+  setLoc: (loc) => dispatch(setLoc(loc))
 
 })
 
