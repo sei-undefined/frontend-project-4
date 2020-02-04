@@ -5,8 +5,18 @@ export const myLoc = (loc) => ({
     center:loc
 })
 
-export const getloc = () => {
-    const loc = navigator.geolocation.getCurrentPosition(position=>{
-        return position
-    })
+export const getLoc = dispatch => {
+    navigator.geolocation.getCurrentPosition(location=>dispatch(myLoc([location.coords.latitude,location.coords.longitude])))
+    
 }
+
+// export const getLoc = () => async dispatch => {
+//     try{
+//         let loc = await navigator.geolocation.getCurrentPosition()
+//         loc = [loc.coords.longitude, loc.coords.latitude]
+       
+//         dispatch(myLoc(loc))
+//     } catch (error) {
+
+//     }
+// }
