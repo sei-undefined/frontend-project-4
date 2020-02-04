@@ -26,7 +26,7 @@ class App extends Component {
     super()
 
     this.state = {
-      redirect: null,
+      // redirect: null,
       user: null,
       alerts: [],
       hello: 0
@@ -42,14 +42,14 @@ class App extends Component {
   }
   hellobuttonhandler = () => this.setState({hello:10})
 
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    })
-  }
-  renderRedirect = () => {
+  // setRedirect = () => {
+  //   this.setState({
+  //     redirect: true
+  //   })
+  // }
+  // renderRedirect = () => {
     
-  }
+  // }
   render () {
     const { alerts, user } = this.state
     
@@ -79,17 +79,18 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
           {/* route for orgpin */} 
+          <AuthenticatedRoute user={user} exact path='/locations/:id' render={() => (<div>Hello</div>)}></AuthenticatedRoute>
         </main>
 
 
 
         <div> {/*Routes*/}
 
-            <Route user={user} path='/' render={() => { 
+            <AuthenticatedRoute user={user} path='/' render={() => { 
               return (
                 <div>
                   {/* <Header/> */}
-                  <MapComp/>
+                  <MapComp user={user}/>
                   <Route path = '/' exact render = {()=> 
                   <div>
                   <ButtonsContainer></ButtonsContainer>
