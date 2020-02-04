@@ -1,3 +1,59 @@
+.header{
+
+//   /* background-image: url("../../images/Queue.jpeg"); */
+//   /* background-size: ;
+//   background-repeat:no-repeat; */
+     display: block; 
+//   // width: 150px;
+//   // height: 300px; 
+}
+// .nav-bar{
+//   margin-top: 7%;
+// }
+// .header-btns{
+
+//   padding:2%;
+//   margin-top: 0px;
+// }
+
+.header-img {
+  // margin-top:0%;
+  margin-right: 80%;
+  border-radius:15%;
+}
+
+// .header-btns-container{
+//   margin-top:-5%;
+//   margin-right: -4%;
+// }
+
+.image {
+/* width:100%; */
+width:100vw;
+/* position: fixed; */
+top:0px;
+/* opacity: 0.3; */
+left:0px;
+/* height: 450px; */
+}
+.nav-div-links{
+display: flex;
+flex-direction: row;
+/* flex-direction: column; */
+position: fixed;
+/* opacity: 0.3; */
+color: #c7c7c9;
+/* background-color: antiquewhite; */
+width:109vw;
+/* opacity:0.7; */
+
+
+}
+
+
+
+
+
 $charcoal: #bbb;
 
 .main-header {
@@ -5,7 +61,9 @@ $charcoal: #bbb;
   border-bottom: 1px solid $charcoal;
   display: flex;
   height: 100px;
-  padding: 0 20px;
+  padding: 6%;
+  border-bottom:3px solid black;
+  background-color: #6e6c64;
 
   a,
   span {

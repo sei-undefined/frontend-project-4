@@ -1,0 +1,31 @@
+.btn-div{
+    /* background-color: darkcyan; */
+    margin-left: 40%;
+    margin-top:-4%;
+    margin-bottom: 3%;
+
+}
+
+.white-btn{
+    background-color: white;
+    /* padding:5%; */
+    margin-right:10%;
+    border-radius: 10%;
+    font-weight: 900;
+}
+
+.golden-btn{
+    background-color: rgba(255,215,0, 0.9);
+    /* padding: 5%; */
+    border-radius: 10%;
+}
+
+.btn{
+    width:12%;
+    height:112px;
+    border: rgba(222, 218, 224, 0.4) solid;
+}
+.btn:hover{
+    border: grey solid 3px;
+    background-color: rgba(222, 218, 224, 0.4);
+}

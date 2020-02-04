@@ -16,7 +16,7 @@ class SignOut extends Component {
 
   render () {
     return ''
-  } 
+  }
 }
 
 export default withRouter(SignOut)

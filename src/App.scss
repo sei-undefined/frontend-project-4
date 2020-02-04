@@ -3,6 +3,32 @@ $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
 
+body{
+  background-color: #bdbbae;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+}
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+a {
+  color: black;
+
+}
+
+a:hover {
+
+  color: grey;
+  font-weight: 900;
+  font-size: large;
+  text-decoration: none;
+  // background-color: lavender;
+  border-radius: 5px;
+
+}
+
 .flash-success,
 .flash-warning,
 .flash-error {
