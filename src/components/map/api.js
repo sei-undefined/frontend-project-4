@@ -1,6 +1,16 @@
 import apiUrl from '../../apiConfig';
 import Axios from 'axios'
 
+export const indexall = (user) => {
+    console.log(user)
+    return  Axios({
+        method:'GET',
+        url: apiUrl + '/allpins',
+        headers:{
+            "Authorization":`Bearer ${user.token}`
+        }
+    })
+}
 
 export const index = (user) => {
     console.log(user)
@@ -24,15 +34,15 @@ export const show = (user, memeId) => {
 }
 
 
-export const create = (user,newMeme) => {
+export const create = (user,newPin) => {
     return Axios({
         method:'POST',
-        url:apiUrl + '/memes',
+        url:apiUrl + '/pins',
         headers:{
             "Authorization":`Bearer ${user.token}`
         },
         data:{
-            meme:newMeme
+            pin:newPin
         }
     })
 }
