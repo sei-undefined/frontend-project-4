@@ -10,8 +10,14 @@ class userPins extends Component {
                 also description or comments we can edit them here
                 user can also delete pin from here if it was by mistake */}
                 <div className="cmnt">
-                    <textarea rows="4" cols="50" name="comment" form="usrform">
-                    Write your comment...</textarea>   <input type="submit"/>
+                    <div className="tgl">
+                        <label class="switch">
+                        <input type="checkbox"/>
+                        <span class="slider"></span>
+                        </label>
+                    </div>    
+                        <textarea rows="4" cols="50" name="comment" form="usrform">
+                            Write your comment...</textarea>   <input className="sbmt"type="submit"/>
                 </div>
 
             </div>

@@ -1,0 +1,24 @@
+.cmnts-container{
+ margin-top:10%;
+ /* margin-bottom: 5%; */
+}
+.coments-component{
+    margin:2px;
+    padding:10px;
+}
+
+.count-div{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 7%;
+
+}
+.comnts{
+    /* margin-top: 12%; */
+    /* border: black solid 5px; */
+    margin:6%;
+    /* border-bottom:grey solid 1px; */
+}
+/* .coments-component{
+    border-bottom:grey solid 1px;
+} */
