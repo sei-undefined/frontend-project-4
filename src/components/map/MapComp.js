@@ -13,6 +13,7 @@ import {index} from './api'
 // import redux
 import {connect} from 'react-redux'
 import {addPin} from '../../store/pin/actions'
+import {myLoc,getLoc} from '../../store/map/actions'
 
 
  
@@ -53,12 +54,12 @@ class MapComp extends Component {
     }
     render (){
       const pins = this.state.pins
-      
+
 
         return ( 
             <Fragment>
               <button onClick={this.locationHandle}>Get location</button>
-            <Map className="map" center={[24.713552, 46.675297]} zoom={12}>
+            <Map className="map" center={this.props.center} zoom={this.props.zoom}>
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -76,7 +77,7 @@ class MapComp extends Component {
                 </Marker>
               ))}
             </Map> 
-            <button onClick={()=>this.props.addPin('testing redux')}>test redux</button> 
+            <button onClick={this.props.getLoc}>test redux</button> 
             </Fragment>
             
 
@@ -86,11 +87,15 @@ class MapComp extends Component {
     }
 }
 const mapStateToProps = state => ({
-  pins: state.pin.pins
+  // pins: state.pin.pins,
+  zoom: state.map.zoom,
+  center: state.map.center
 })
 
 const mapDispatchToProps =  dispatch => ({
-  addPin: id => dispatch(addPin(id))
+  addPin: id => dispatch(addPin(id)),
+  getLoc: () => dispatch(getLoc)
+
 
 })
 
