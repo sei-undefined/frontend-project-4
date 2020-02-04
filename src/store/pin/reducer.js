@@ -5,7 +5,7 @@ import apiUrl from '../../apiConfig'
 const initialState = {
     pins: []
 }
-// this comment is testting
+// this comment is testting 2
 
 const reducer = (state=initialState, action)=>{
     switch (action.type) { 
