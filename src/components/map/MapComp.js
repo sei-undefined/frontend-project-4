@@ -45,6 +45,15 @@ class MapComp extends Component {
     //         })
     //     })
     //     .catch((error) => console.log(error))
+      // const user = this.props.user
+      //   index(user)
+      //   .then(response => {
+      //       const allPins = response.data.pins;
+      //       this.setState({
+      //           pins:allPins
+      //       })
+      //   })
+      //   .catch((error) => console.log(error))
     }
     locationHandle = () => {
       navigator.geolocation.getCurrentPosition((location)=>{
