@@ -7,6 +7,7 @@ const initialState = {
 }
 // this comment is testting 2
 
+
 const reducer = (state=initialState, action)=>{
     switch (action.type) { 
         case INDEX_PIN:
