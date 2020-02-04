@@ -3,7 +3,8 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
 export const indexPin = pins => ({
-    type: INDEX_PIN
+    type: INDEX_PIN,
+    pins
 })
 export const addPin = pin => ({
     type: ADD_PIN,
@@ -15,16 +16,13 @@ export const deletePin = id => ({
     id
 })
 
-export const getPin = () => async dispatch => {
+export const getPins = () => async dispatch => {
     try{
-        const res = await axios.get(apiUrl+'/pins')
-        const name = res.data.link
-        const author = res.data.image
-        const id = 3
-        const pin = {
-            name, author, id
-        }
-        dispatch(addPin(pin))
+        const res = await axios.get(apiUrl+'/allpins')
+        const pins = res.data.pins
+        console.log('this is from actions', pins)
+
+        dispatch(indexPin(pins))
     } catch (error) {
 
     }
