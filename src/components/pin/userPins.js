@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 // import {NavLink} from 'react-router-dom'
+import './userPins.css'
 class userPins extends Component {
     render (){
         return (
@@ -18,7 +19,9 @@ class userPins extends Component {
                     </div>    
                         <textarea rows="4" cols="50" name="comment" form="usrform">
                             Write your comment...</textarea>   <input className="sbmt"type="submit"/>
-                </div>
+                            
+                    </div>
+                    <button>delete</button>
 
             </div>
 

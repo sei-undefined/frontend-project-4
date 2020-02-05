@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
-import Jasad from '../data/imgs/Jasad.JPG'
+import Jasad from '../data/imgs/Jasad.jpg'
 const authenticatedOptions = (
   <React.Fragment >
     <Link className="header-btns" to="/change-password">Change Password</Link>
@@ -27,7 +27,7 @@ const Header = ({ user }) => (
   <header className="main-header">
   
     <nav className="header-btns-container">
-    <div className="img-div"><img className ="header-img" src={Jasad} width="58%" height="570px" /></div>
+    <div className="img-div"><img className ="header-img" src={Jasad} /*width="50%" height="520px" *//></div>
     {/* <div className="img-div"><img className ="header-img" src="../data/imgs/Jasad.JPG" width="17%" height="133px" /></div> */}
 
       { user && <span className="welcome" >Welcome, {user.email}</span>}

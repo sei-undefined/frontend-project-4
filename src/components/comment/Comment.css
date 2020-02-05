@@ -25,7 +25,17 @@
     border-bottom:grey solid 1px;
 } */
 
-.count{
+.wcount{
+    background-color: white;
+    border: #d6d2d2 solid 1px;
+    /* height: 100px; */
+    /* width: 16%; */
+    padding:3%;
+    border-radius: 9%;
+    text-align: center;
+}
+.gcount{
+    background-color: gold;
     border: #d6d2d2 solid 1px;
     /* height: 100px; */
     /* width: 16%; */
