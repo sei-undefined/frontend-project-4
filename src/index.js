@@ -13,8 +13,10 @@ import thunk from 'redux-thunk'
 
 // logger
 const looger  = store => next => action => {
-  console.log(action)
+  console.log('this is redux logger')
+  console.log(store.getState())
   next(action) // this will console every action
+  console.log(store.getState())
 
 }
 

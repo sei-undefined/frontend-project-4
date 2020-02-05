@@ -10,17 +10,18 @@ export const myLoc = (loc) => ({
     
 // }
 
-export const setLoc = (loc)=> dispatch => {
-    dispatch(myLoc(loc))
-}
-
-// export const getLoc = () => async dispatch => {
-//     try{
-//         let loc = await navigator.geolocation.getCurrentPosition()
-//         loc = [loc.coords.longitude, loc.coords.latitude]
-       
-//         dispatch(myLoc(loc))
-//     } catch (error) {
-
-//     }
+// export const setLoc = (loc)=> dispatch => {
+//     dispatch(myLoc(loc))
 // }
+
+
+export const getLoc = () => async dispatch => {
+    try{
+        let loc = await navigator.geolocation.getCurrentPosition()
+        loc = [loc.coords.longitude, loc.coords.latitude]
+       
+        dispatch(myLoc(loc))
+    } catch (error) {
+        console.log(error)
+    }
+}

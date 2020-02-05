@@ -18,12 +18,15 @@ export const deletePin = id => ({
 
 export const getPins = () => async dispatch => {
     try{
+        
         const res = await axios.get(apiUrl+'/allpins')
         const pins = res.data.pins
         console.log('this is from actions', pins)
 
         dispatch(indexPin(pins))
     } catch (error) {
+        console.log(error)
 
     }
 }
+

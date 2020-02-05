@@ -13,7 +13,7 @@ import {indexall} from './api'
 // import redux
 import {connect} from 'react-redux'
 import {addPin,getPins} from '../../store/pin/actions'
-import {myLoc,getLoc,setLoc} from '../../store/map/actions'
+import {myLoc,getLoc} from '../../store/map/actions'
 
 
  
@@ -34,7 +34,7 @@ class MapComp extends Component {
 
     componentDidMount(){
       this.props.getPins()
-      console.log(this.props.pins)
+      // console.log(this.props.pins)
     //   console.log(this.state.center)
     //   const user = this.props.user
     //     indexall(user)
@@ -67,9 +67,8 @@ class MapComp extends Component {
     render (){
       const pins = this.props.pins
       console.log(pins)
-      navigator.geolocation.getCurrentPosition(location => {
-        return let loc = [location.coords.longitude,location.coords.latitude]
-
+      const loc = navigator.geolocation.getCurrentPosition(location => {
+        return  [location.coords.longitude,location.coords.latitude]
       })
       // loc = [loc.coords.latitude, loc.coords.longitude]
 
@@ -96,9 +95,10 @@ class MapComp extends Component {
               ))}
               
             </Map> 
-            <button onClick={this.props.getPins}>test redux getPins</button> 
-            {/* <button onClick={this.props.getLoc}>test redux getLoc</button>  */}
-            <button onClick={()=>this.props.setLoc(loc)}>test redux setLoc</button> 
+            {/* <button onClick={this.props.getPins}>test redux getPins</button>  */}
+            <button onClick={this.props.getLoc}>test redux getLoc</button> 
+            {/* <button onClick={()=>this.props.setLoc(loc)}>test redux setLoc</button>  */}
+      
 
             </Fragment>
             
@@ -116,9 +116,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps =  dispatch => ({
   addPin: id => dispatch(addPin(id)),
-  // getLoc: () => dispatch(getLoc),
+  getLoc: () => dispatch(getLoc),
   getPins: () => dispatch(getPins),
-  setLoc: (loc) => dispatch(setLoc(loc))
+  // setLoc: (loc) => dispatch(setLoc(loc))
 
 })
 
