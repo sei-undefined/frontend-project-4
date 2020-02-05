@@ -93,8 +93,8 @@ class App extends Component {
                   <Route path = '/' exact render = {()=> 
                   <div>
                   <ButtonsContainer></ButtonsContainer>
-                  <button onClick={this.setRedirect}>Hello {this.state.hello}</button>
-                  <div>{this.state.redirect? "true" : "false"}</div>
+                  {/* <button onClick={this.setRedirect}>Hello {this.state.hello}</button> */}
+                  {/* <div>{this.state.redirect? "true" : "false"}</div> */}
                   </div>
                   }/>
                 </div>
@@ -117,8 +117,9 @@ class App extends Component {
             )
           }}/>
           {content}
-
-          <Footer/>
+            <div className="footer">
+               <Footer/>
+            </div>
         </div>
 
         
