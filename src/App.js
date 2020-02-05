@@ -52,9 +52,6 @@ class App extends Component {
   // }
   render () {
     const { alerts, user } = this.state
-    
-
-    const content = this.state.redirect ? <Redirect to="/locations" /> : null
 
     return (
       <React.Fragment>
@@ -117,7 +114,6 @@ class App extends Component {
               
             )
           }}/>
-          {content}
             <div className="footer">
                <Footer/>
             </div>

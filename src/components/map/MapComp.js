@@ -8,12 +8,15 @@ import positions from '../../data/positions'
 import {Link, withRouter} from 'react-router-dom'
 
 // import api
-import {indexall} from './api'
+import {index} from './api'
 
 // import redux
 import {connect} from 'react-redux'
 import {addPin,getPins} from '../../store/pin/actions'
 import {myLoc,getLoc} from '../../store/map/actions'
+
+// import data
+
 
 
  
@@ -33,7 +36,12 @@ class MapComp extends Component {
 
 
     componentDidMount(){
-      this.props.getPins()
+      const user = this.props.user
+      this.props.getPins(user)
+      // getting the current location
+      console.log('this is from did mount')
+      console.log('center before',this.props.center)
+      this.props.getLoc()
       // console.log(this.props.pins)
     //   console.log(this.state.center)
     //   const user = this.props.user
@@ -55,38 +63,36 @@ class MapComp extends Component {
       //   })
       //   .catch((error) => console.log(error))
     }
-    locationHandle = () => {
-      navigator.geolocation.getCurrentPosition((location)=>{
-        console.log(location)
-      })
-    }
-    handleClick= (id) => {
-      console.log(id)
-      this.props.history.push(`/locations/${id}`)
-    }
+    // locationHandle = () => {
+    //   navigator.geolocation.getCurrentPosition((location)=>{
+    //     console.log(location)
+    //   })
+    // }
+    // handleClick= (id) => {
+    //   console.log(id)
+    //   this.props.history.push(`/locations/${id}`)
+    // }
     render (){
       const pins = this.props.pins
-      console.log(pins)
-      const loc = navigator.geolocation.getCurrentPosition(location => {
-        return  [location.coords.longitude,location.coords.latitude]
-      })
+      // console.log(pins)
+      
       // loc = [loc.coords.latitude, loc.coords.longitude]
 
 
         return ( 
             <Fragment>
-              <button onClick={this.locationHandle}>Get location</button>
+              {/* <button onClick={this.locationHandle}>Get location</button> */}
             <Map className="map" center={this.props.center} zoom={this.props.zoom}>
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
-              {/* <Marker onClick= {this.toLocation} position={[24.713552, 46.675297]}>
+              <Marker onClick= {this.toLocation} position={[24.713552, 46.675297]}>
                 <Popup>Nora is here</Popup>
                 </Marker>
                 <Marker position={[24.813552, 46.675297]}>
                 <Popup>Nora is here</Popup>
-              </Marker> */}
+              </Marker>
 
               {this.props.pins.map(pin=>(
                 <Marker onClick={()=>this.handleClick(pin._id)} key={pin._id} position={pin.location.coordinates}>
@@ -96,8 +102,9 @@ class MapComp extends Component {
               
             </Map> 
             {/* <button onClick={this.props.getPins}>test redux getPins</button>  */}
-            <button onClick={this.props.getLoc}>test redux getLoc</button> 
+            <button onClick={this.props.getLoc()}>test redux getLoc</button> 
             {/* <button onClick={()=>this.props.setLoc(loc)}>test redux setLoc</button>  */}
+            <button onClick={()=>this.render()}>did mount</button>
       
 
             </Fragment>
@@ -116,8 +123,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps =  dispatch => ({
   addPin: id => dispatch(addPin(id)),
-  getLoc: () => dispatch(getLoc),
-  getPins: () => dispatch(getPins),
+  getLoc: () => dispatch(getLoc()),
+  getPins: (user) => dispatch(getPins(user)),
   // setLoc: (loc) => dispatch(setLoc(loc))
 
 })

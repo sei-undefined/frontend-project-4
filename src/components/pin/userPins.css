@@ -1,0 +1,11 @@
+.user-pins-div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.cmnt{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -1,6 +1,7 @@
 import { ADD_PIN ,DELETE_PIN, INDEX_PIN } from "./actionTypes";
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import {indexall} from '../../components/map/api'
 
 export const indexPin = pins => ({
     type: INDEX_PIN,
@@ -16,11 +17,26 @@ export const deletePin = id => ({
     id
 })
 
-export const getPins = () => async dispatch => {
-    try{
+// export const getPins = () => async dispatch => {
+//     try{
         
-        const res = await axios.get(apiUrl+'/allpins')
+//         const res = await axios.get(apiUrl+'/allpins')
+//         const pins = res.data.pins
+//         console.log('this is from actions', pins)
+
+//         dispatch(indexPin(pins))
+//     } catch (error) {
+//         console.log(error)
+
+//     }
+// }
+
+export const getPins = (user) => async dispatch => {
+    try{
+        const res = await indexall(user)
+        // const res = await axios.get(apiUrl+'/allpins')
         const pins = res.data.pins
+        console.log('this is the user', user)
         console.log('this is from actions', pins)
 
         dispatch(indexPin(pins))

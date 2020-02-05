@@ -12,21 +12,21 @@ export const indexall = (user) => {
     })
 }
 
-export const index = (user) => {
-    console.log(user)
-    return  Axios({
-        method:'GET',
-        url: apiUrl + '/pins',
-        headers:{
-            "Authorization":`Bearer ${user.token}`
-        }
-    })
-}
+// export const index = (user) => {
+//     console.log(user)
+//     return  Axios({
+//         method:'GET',
+//         url: apiUrl + '/pins',
+//         headers:{
+//             "Authorization":`Bearer ${user.token}`
+//         }
+//     })
+// }
 
-export const show = (user, memeId) => {
+export const show = (user, pinId) => {
     return Axios({
         method:'GET',
-        url: apiUrl + `/memes/${memeId}`,
+        url: apiUrl + `/pins/${pinId}`,
         headers:{
             "Authorization":`Bearer ${user.token}`
         }

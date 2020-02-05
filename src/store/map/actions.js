@@ -17,9 +17,15 @@ export const myLoc = (loc) => ({
 
 export const getLoc = () => async dispatch => {
     try{
-        let loc = await navigator.geolocation.getCurrentPosition()
-        loc = [loc.coords.longitude, loc.coords.latitude]
-       
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+          };
+        const loc = await navigator.geolocation.getCurrentPosition(location => {
+            return  [location.coords.longitude,location.coords.latitude]
+          },console.error,options)
+        console.log('this is from map action',loc)
         dispatch(myLoc(loc))
     } catch (error) {
         console.log(error)
