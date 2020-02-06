@@ -88,14 +88,14 @@ class App extends Component {
                 <div>
                   {/* <Header/> */}
                   <MapComp user={user}/>
-                  <Route path = '/' exact render = {()=> 
+                <Route path = '/' exact render = {()=> 
                   <div>
-                  <ButtonsContainer></ButtonsContainer>
+                  <ButtonsContainer user={user}></ButtonsContainer>
                   {/* <button onClick={this.setRedirect}>Hello {this.state.hello}</button> */}
                   {/* <div>{this.state.redirect? "true" : "false"}</div> */}
                   </div>
                   }/>
-                </div>
+                  </div>
              
             )}}/>
 

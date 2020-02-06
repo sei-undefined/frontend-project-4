@@ -1,7 +1,7 @@
 import { ADD_PIN ,DELETE_PIN, INDEX_PIN } from "./actionTypes";
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import {indexall} from '../../components/map/api'
+import {indexall,create} from '../../components/map/api'
 
 export const indexPin = pins => ({
     type: INDEX_PIN,
@@ -45,4 +45,44 @@ export const getPins = (user) => async dispatch => {
 
     }
 }
+
+
+export const createPin = (user, helpType, loc) => async dispatch => {
+    try{
+        // const options = {
+        //     enableHighAccuracy: true,
+        //     timeout: 5000,
+        //     maximumAge: 0
+        //   };
+          console.log('this is the loc from action.js pin', loc)
+        const pin ={
+                "location":{
+                    "type": "Point",
+                    "coordinates": loc
+                },
+                "help":helpType,
+                "desc":''
+            }
+        // {
+        //     "pin":{
+        //         "location":{
+        //             "type": "Point",
+        //             "coordinates":[16,63]
+        //         },
+        //         "help":helpType,
+        //         "desc":null
+        //     }
+        // } 
+        console.log('this is the created pin', pin)
+        const res = await create(user, pin)
+        const createdPin = res.data.pin
+        const location = res.data.location
+        console.log('this is the response location from BE', location)
+        dispatch(addPin(createdPin))
+    } catch (error) {
+        console.log(error)
+
+    }
+}
+
 
