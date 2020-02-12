@@ -49,7 +49,7 @@ class ButtonsContainer extends Component {
                 onClick={()=>this.handleClick(false)}
                 className="white-btn btn">Locate <hr/> <img src="https://cdns.iconmonstr.com/wp-content/assets/preview/2018/240/iconmonstr-location-pin-thin.png" width="26%" height="20%"/></button>
                 <button className="golden-btn btn" onClick={()=>this.handleClick(true)} >Helped <hr/> <img src="https://www.myspire.com/MySPIRE/media/Icons/location_gold.png" width="26%" height="20%"/> </button>
-                <button>current</button>
+                {/* <button>current</button> */}
             </div>
 
         )
