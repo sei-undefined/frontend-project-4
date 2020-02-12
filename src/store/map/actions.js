@@ -14,19 +14,25 @@ export const myLoc = (loc) => ({
 //     dispatch(myLoc(loc))
 // }
 
+//  function getPosition() {
+//             // Simple wrapper
+//             return new Promise((res, rej) => {
+//                 navigator.geolocation.getCurrentPosition(res, rej);
+//             });
+//         }
 
 export const getLoc = () => async dispatch => {
     try{
-        const options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
-          };
-        const loc = await navigator.geolocation.getCurrentPosition(location => {
-            return  [location.coords.longitude,location.coords.latitude]
-          },console.error,options)
-        console.log('this is from map action',loc)
-        dispatch(myLoc(loc))
+       
+        
+        // const loc = getGPS()
+        // console.log('this is the getGPS',loc)
+        
+        // const loc = navigator.geolocation.getCurrentPosition(location => {
+        //     return  [location.coords.longitude,location.coords.latitude]
+        //   })
+        // console.log('this is from map action',loc)
+        // dispatch(myLoc(loc))
     } catch (error) {
         console.log(error)
     }

@@ -68,10 +68,10 @@ class MapComp extends Component {
     //     console.log(location)
     //   })
     // }
-    // handleClick= (id) => {
-    //   console.log(id)
-    //   this.props.history.push(`/locations/${id}`)
-    // }
+    handleClick= (id) => {
+      console.log(id)
+      this.props.history.push(`/locations`)
+    }
     render (){
       const pins = this.props.pins
       // console.log(pins)
@@ -87,12 +87,12 @@ class MapComp extends Component {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
-              <Marker onClick= {this.toLocation} position={[24.713552, 46.675297]}>
+              {/* <Marker onClick= {this.toLocation} position={[24.713552, 46.675297]}>
                 <Popup>Nora is here</Popup>
                 </Marker>
                 <Marker position={[24.813552, 46.675297]}>
                 <Popup>Nora is here</Popup>
-              </Marker>
+              </Marker> */}
 
               {this.props.pins.map(pin=>(
                 <Marker onClick={()=>this.handleClick(pin._id)} key={pin._id} position={pin.location.coordinates}>
@@ -102,9 +102,9 @@ class MapComp extends Component {
               
             </Map> 
             {/* <button onClick={this.props.getPins}>test redux getPins</button>  */}
-            <button onClick={this.props.getLoc()}>test redux getLoc</button> 
+            {/* <button onClick={this.props.getLoc}>test redux getLoc</button>  */}
             {/* <button onClick={()=>this.props.setLoc(loc)}>test redux setLoc</button>  */}
-            <button onClick={()=>this.render()}>did mount</button>
+            {/* <button onClick={()=>this.render()}>did mount</button> */}
       
 
             </Fragment>
